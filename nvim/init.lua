@@ -21,7 +21,7 @@ if not LAZY_OPTS then
       rtp = {
         reset = false,
         disabled_plugins = {
-          'netrwPlugin',
+          --'netrwPlugin',
           'tutor',
         },
       },

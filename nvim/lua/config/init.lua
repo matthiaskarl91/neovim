@@ -17,13 +17,21 @@ vim.opt.relativenumber = true
 vim.opt.shadafile = 'NONE'        -- disable shada
 vim.opt.shiftwidth = 0            -- >> shifts by tabstop
 vim.opt.showmatch = true          -- highlight matching brackets
-vim.opt.signcolumn = 'no'
+vim.opt.signcolumn = 'yes'
 vim.opt.softtabstop = -1          -- backspace removes tabstop
 vim.opt.swapfile = false
 vim.opt.tabstop = 2               -- 2 space tabs are based
 vim.opt.updatetime = 250          -- decrease update time
 vim.opt.virtualedit = 'onemore'
 vim.opt.winborder = 'single'
+vim.opt.smartindent = true
+vim.opt.wrap = false       
+vim.opt.backup = false
+vim.opt.undofile = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
 vim.cmd('colorscheme iofq')
 
 -- Switch tab length on the fly
