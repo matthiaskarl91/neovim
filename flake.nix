@@ -50,6 +50,7 @@
             luajitPackages.luacheck
             alejandra
             nvim-dev
+            vimPlugins.nvim-treesitter
           ];
           shellHook = ''
             # symlink the .luarc.json generated in the overlay

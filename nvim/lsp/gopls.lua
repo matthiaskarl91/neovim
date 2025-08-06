@@ -1,33 +1,19 @@
----@type vim.lsp.Config
 return {
+  -- Command and arguments to start the server.
+  cmd = { 'gopls' },
+
+  -- Filetypes to automatically attach to.
+  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl'  },
+
+  root_markers = {  'go.mod'  },
+
   settings = {
     gopls = {
-      gofumpt = true,
-      codelenses = {
-        gc_details = true,
-        test = true,
-      },
       analyses = {
-        unusedvariable = true,
         unusedparams = true,
-        useany = true,
-        unusedwrite = true,
-        nilness = true,
-        shadow = true,
       },
-      hints = {
-        assignVariableTypes = true,
-        compositeLiteralFields = true,
-        compositeLiteralTypes = true,
-        constantValues = true,
-        functionTypeParameters = true,
-        rangeVariableTypes = true,
-        parameterNames = true,
-      },
-      usePlaceholders = true,
       staticcheck = true,
-      completeUnimported = true,
-      semanticTokens = true,
+      gofumpt = true,
     },
   },
 }
