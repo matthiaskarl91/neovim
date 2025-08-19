@@ -112,31 +112,9 @@ with lib;
     };
 
     # The final init.lua content that we pass to the Neovim wrapper.
-    # It wraps the user init.lua, prepends the lua lib directory to the RTP
-    # and prepends the nvim and after directory to the RTP
+    # It prepends the nvim directory to the runtime path and loads the user's init.lua.
     initLua =
       ''
-        LAZY_OPTS = {
-          performance = {
-            reset_packpath = false,
-            rtp = {
-              reset = false,
-              disabled_plugins = {
-                "netrwPlugin",
-                "tutor",
-              },
-            },
-          },
-          dev = {
-            path = "${packDir}/pack/myNeovimPackages/start",
-            patterns = {""},
-          },
-          checker = {
-            enabled = false,
-          },
-          install = { missing = false, },
-          spec = {{ import = "plugins" }},
-        }
         vim.opt.rtp:prepend('${nvimRtp}')
       ''
       + (builtins.readFile ../nvim/init.lua);
