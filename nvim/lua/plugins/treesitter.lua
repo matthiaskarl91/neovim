@@ -5,7 +5,17 @@ vim.pack.add({
 require("nvim-treesitter.configs").setup({
   ensure_installed = {
     'lua',
-    'go'
+    'luadoc',
+    'luap',
+    'go',
+    'gomod',
+    'gowork',
+    'gosum',
+    'tsx',
+    'typescript',
+    'vim',
+    'vimdoc',
+
   },
   auto_install = false,
   highlight = {
