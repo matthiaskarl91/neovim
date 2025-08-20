@@ -17,6 +17,7 @@ let
   basePackages = with pkgs; [
     ripgrep
     fd
+    fzf
   ];
   # Extra packages that should be included on nixos but don't need to be bundled
   extraPackages = with pkgs; [
@@ -27,6 +28,7 @@ let
     hadolint
     nixfmt
     shellcheck
+    luacheck
 
     # LSPs
     gopls
@@ -62,6 +64,5 @@ in
   };
 
   # This can be symlinked in the devShell's shellHook
-  nvim-luarc-json = final.mk-luarc-json {
-  };
+  nvim-luarc-json = final.mk-luarc-json { };
 }

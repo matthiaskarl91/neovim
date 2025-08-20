@@ -33,6 +33,9 @@ require("blink.cmp").setup({
   --},
   -- },
   completion = {
+    ghost_text = {
+      enabled = true,
+    },
     menu = {
       border = nil,
       scrolloff = 1,
