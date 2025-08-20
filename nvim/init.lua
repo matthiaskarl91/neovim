@@ -6,6 +6,7 @@ require('config.lsp')
 
 require('plugins.blink-cmp')
 require('plugins.conform')
+require('plugins.dap')
 require('plugins.fzflua')
 require('plugins.gitsigns')
 require('plugins.lazygit')
