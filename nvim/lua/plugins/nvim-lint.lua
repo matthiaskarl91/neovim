@@ -4,7 +4,7 @@ local golangcilint = require("lint").linters.golangcilint
 golangcilint.ignore_exitcode = true
 
 require("lint").linters_by_ft = {
-  lua = { "luacheck" },
+  --lua = { "luacheck" },
   python = { "flake8" },
   javascript = { "eslint_d" },
   typescript = { "eslint_d" },
