@@ -28,7 +28,8 @@ let
     hadolint
     nixfmt
     shellcheck
-    luacheck
+    luajitPackages.luacheck
+    eslint_d
 
     # LSPs
     gopls
