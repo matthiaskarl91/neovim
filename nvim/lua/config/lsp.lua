@@ -22,6 +22,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.completion.get()
       end)
     end
+    vim.keymap.set('n', 'gd', function() vim.lsp.buf.implementation() end, { desc = "Go to implementation" })
   end,
 })
 
