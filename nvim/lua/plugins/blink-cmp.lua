@@ -33,6 +33,18 @@ require("blink.cmp").setup({
   --},
   -- },
   completion = {
+    trigger = {
+      show_on_keyword = true,
+    },
+    accept = {
+      auto_brackets = { enabled = false },
+    },
+    list = {
+      selection = {
+        preselect = false,
+        auto_insert = true,
+      },
+    },
     ghost_text = {
       enabled = true,
     },

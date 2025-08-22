@@ -9,6 +9,7 @@ vim.opt.signcolumn = 'yes'
 
 -- Cursorline
 vim.opt.cursorline = true
+vim.opt.completeopt = { "menu", "menuone", "noselect" } -- mostly just for cmp
 
 -- Show whitespace characters
 vim.opt.list = true
