@@ -7,8 +7,8 @@ require("lint").linters_by_ft = {
   --lua = { "luacheck" },
   python = { "flake8" },
   javascript = { "eslint" },
-  typescript = {'eslint', 'eslint_d'},
-  typescriptreact = {'eslint', 'eslint_d'},
+  typescript = { 'eslint', 'eslint_d' },
+  typescriptreact = { 'eslint', 'eslint_d' },
   json = { "jsonlint" },
   yaml = { "yamllint" },
   proto = { "buf_lint" },
@@ -20,12 +20,10 @@ require("lint").linters_by_ft = {
   fish = { "shellcheck" },
 }
 
-require("lint").linters = {
-  buf_lint = {
-    cmd = "buf",
-    args = { "lint", "--path", "$FILENAME" },
-    stdin = false,
-  },
+require("lint").linters.buf_lint = {
+  cmd = "buf",
+  args = { "lint", "--path", "$FILENAME" },
+  stdin = false,
 }
 
 vim.api.nvim_create_autocmd("BufWritePost", {
