@@ -26,7 +26,15 @@ require("lint").linters.buf_lint = {
   stdin = false,
 }
 
-vim.api.nvim_create_autocmd("BufWritePost", {
+local eslint = require("lint").linters.eslint_d
+eslint.args = { '--no-warn-ignored', '--format', 'json', '--stdin', '--stdin-filename', function()
+  return vim.api.nvim_buf_get_name(0)
+end }
+eslint.cwd = function()
+  return vim.fn.finddir('package.json', ';') or vim.fn.getcwd()
+end
+
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
   callback = function()
     require("lint").try_lint()
   end,
