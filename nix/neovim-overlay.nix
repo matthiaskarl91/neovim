@@ -41,6 +41,7 @@ let
     jujutsu
 
     #treesitter
+    tree-sitter
     tree-sitter-grammars.tree-sitter-graphql
   ];
 in
