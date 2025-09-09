@@ -3,9 +3,26 @@ vim.pack.add({
 })
 
 require("nvim-treesitter").setup({
+  install = {
+    'lua',
+    'luadoc',
+    'luap',
+    'go',
+    'gomod',
+    'gowork',
+    'gosum',
+    'graphql',
+    'tsx',
+    'typescript',
+    'vim',
+    'vimdoc',
+  },
   install_dir = vim.fn.stdpath('data') .. '/treesitter'
 })
-
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '<filetype>' },
+  callback = function() vim.treesitter.start() end,
+})
 --require("nvim-treesitter").setup({
 --  ensure_installed = {
 --   'lua',
