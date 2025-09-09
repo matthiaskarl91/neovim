@@ -1,4 +1,6 @@
-(variable_declarator
-  (comment) @gql_comment
-  (#eq? @gql_comment "/* GraphQL */")
-  (template_string) @graphql)
+((call_expression
+  function: (identifier) @func
+  arguments: (template_string) @injection.content)
+ (#any-of? @func "gql" "graphql")
+ (#set! injection.language "graphql")
+ (#set! injection.combined))
