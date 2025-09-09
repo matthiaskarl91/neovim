@@ -11,6 +11,7 @@ require("nvim-treesitter.configs").setup({
     'gomod',
     'gowork',
     'gosum',
+    'graphql',
     'tsx',
     'typescript',
     'vim',
