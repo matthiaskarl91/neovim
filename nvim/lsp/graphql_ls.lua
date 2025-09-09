@@ -1,5 +1,5 @@
 return {
-  cmd = { 'graphql-lsp', 'server', '--method=stream' },
+  cmd = { 'graphql-lsp', 'server', '-m', 'stream' },
   filetypes = { 'graphql', 'gql', 'graphqls', 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
   root_markers = {
     '.graphqlrc', '.graphqlrc.json', '.graphqlrc.yaml', '.graphqlrc.yml',
