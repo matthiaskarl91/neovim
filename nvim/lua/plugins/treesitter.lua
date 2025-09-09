@@ -20,7 +20,7 @@ require("nvim-treesitter").setup({
   install_dir = vim.fn.stdpath('data') .. '/treesitter'
 })
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '<filetype>' },
+  pattern = { 'typescriptreact' },
   callback = function() vim.treesitter.start() end,
 })
 --require("nvim-treesitter").setup({
