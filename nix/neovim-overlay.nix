@@ -43,6 +43,7 @@ let
     #treesitter
     tree-sitter
     tree-sitter-grammars.tree-sitter-graphql
+    tree-sitter-grammars.tree-sitter-typescript
   ];
 in
 {
