@@ -12,6 +12,7 @@ require("nvim-treesitter").setup({
     'gowork',
     'gosum',
     'graphql',
+    'queries',
     'tsx',
     'typescript',
     'vim',
