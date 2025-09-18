@@ -8,7 +8,7 @@
 -- so in ~.config/lsp/lua_ls.lua for lua_ls, for example.
 vim.lsp.enable({
   'gopls',
-  'graphql_ls',
+--  'graphql_ls',
   'lua_ls',
   'ts-ls',
 })
