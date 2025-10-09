@@ -1,9 +1,12 @@
 vim.pack.add({ "https://github.com/mfussenegger/nvim-lint" })
 
+local lint = require("lint")
+
 local golangcilint = require("lint").linters.golangcilint
 golangcilint.ignore_exitcode = true
 
-require("lint").linters_by_ft = {
+
+lint.linters_by_ft = {
   --lua = { "luacheck" },
   python = { "flake8" },
   javascript = { "eslint" },
@@ -20,22 +23,30 @@ require("lint").linters_by_ft = {
   fish = { "shellcheck" },
 }
 
-require("lint").linters.buf_lint = {
-  cmd = "buf",
-  args = { "lint", "--path", "$FILENAME" },
-  stdin = false,
-}
+local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
-local eslint = require("lint").linters.eslint_d
-eslint.args = { '--no-warn-ignored', '--format', 'json', '--stdin', '--stdin-filename', function()
-  return vim.api.nvim_buf_get_name(0)
-end }
-eslint.cwd = function()
-  return vim.fn.finddir('package.json', ';') or vim.fn.getcwd()
-end
-
-vim.api.nvim_create_autocmd({ 'BufWritePost', 'InsertLeave', 'BufEnter' }, {
+vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufEnter', 'InsertLeave' }, {
+  group = lint_augroup,
   callback = function()
-    require("lint").try_lint()
-  end,
+    local linters = lint.linters_by_ft[vim.bo.filetype]
+    if linters and #linters > 0 then
+      lint.try_lint()
+    end
+  end
 })
+
+-- Manual linting command
+vim.keymap.set("n", "<leader>lll", function()
+  lint.try_lint()
+  vim.notify("Linting...", vim.log.levels.INFO, { title = "nvim-lint" })
+end, { desc = "Trigger linting for current file" })
+
+-- Show linter status
+vim.keymap.set("n", "<leader>li", function()
+  local linters = lint.linters_by_ft[vim.bo.filetype] or {}
+  if #linters == 0 then
+    print("No linters configured for filetype: " .. vim.bo.filetype)
+  else
+    print("Linters for " .. vim.bo.filetype .. ": " .. table.concat(linters, ", "))
+  end
+end, { desc = "Show available linters for current filetype" })
