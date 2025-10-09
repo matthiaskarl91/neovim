@@ -7,8 +7,8 @@ require("lint").linters_by_ft = {
   --lua = { "luacheck" },
   python = { "flake8" },
   javascript = { "eslint" },
-  typescript = { 'eslint_d' },
-  typescriptreact = { 'eslint_d' },
+  typescript = { 'eslint' },
+  typescriptreact = { 'eslint' },
   json = { "jsonlint" },
   yaml = { "yamllint" },
   proto = { "buf_lint" },
@@ -34,7 +34,7 @@ eslint.cwd = function()
   return vim.fn.finddir('package.json', ';') or vim.fn.getcwd()
 end
 
-vim.api.nvim_create_autocmd({ 'BufWritePost', 'InsertLeave' }, {
+vim.api.nvim_create_autocmd({ 'BufWritePost', 'InsertLeave', 'BufEnter' }, {
   callback = function()
     require("lint").try_lint()
   end,
