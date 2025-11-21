@@ -4,6 +4,7 @@ vim.pack.add({
 
 require("nvim-treesitter").setup({
   ensure_installed = {
+    'astro',
     'lua',
     'luadoc',
     'luap',

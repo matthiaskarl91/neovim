@@ -32,6 +32,7 @@ let
     eslint_d
 
     # LSPs
+    astro-language-server
     gopls
     lua-language-server
     nil
@@ -45,6 +46,8 @@ let
     tree-sitter-grammars.tree-sitter-query
     tree-sitter-grammars.tree-sitter-graphql
     tree-sitter-grammars.tree-sitter-typescript
+    vimPlugins.nvim-treesitter-parsers.astro
+
   ];
 in
 {
