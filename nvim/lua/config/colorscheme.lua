@@ -1,2 +1,2 @@
---#vim.cmd[[colorscheme tokyonight]]
-vim.cmd [[colorscheme alabaster]]
+vim.cmd [[colorscheme tokyonight]]
+--vim.cmd [[colorscheme alabaster]]
