@@ -12,6 +12,7 @@ vim.lsp.enable({
   'graphql_ls',
   'lua_ls',
   'ts-ls',
+  "tailwind-ls"
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
