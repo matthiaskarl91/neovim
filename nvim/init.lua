@@ -5,6 +5,7 @@ require('config.autocmd')
 require('config.lsp')
 
 require('plugins.blink-cmp')
+require('plugins.claude')
 require('plugins.colorschemes')
 require('plugins.conform')
 require('plugins.dap')
